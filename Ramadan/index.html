@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramadan Mubarak ✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:black;
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+color:white;
+}
+
+/* VIDEO */
+video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+display:none;
+z-index:-2;
+filter:brightness(0.9);
+}
+
+/* FRONT SCREEN */
+.entry{
+text-align:center;
+animation:fadeIn 1.5s ease;
+}
+
+.entry h1{
+font-family:'Cinzel',serif;
+font-size:38px;
+color:gold;
+text-shadow:0 0 20px gold;
+margin-bottom:15px;
+}
+
+.entry p{
+margin-bottom:25px;
+font-size:15px;
+color:#ddd;
+}
+
+input{
+padding:14px 25px;
+border:none;
+border-radius:40px;
+outline:none;
+width:260px;
+text-align:center;
+font-size:16px;
+transition:0.4s;
+}
+
+input:hover{
+box-shadow:0 0 20px gold;
+}
+
+button{
+margin-top:15px;
+padding:14px 35px;
+border:none;
+border-radius:40px;
+background:linear-gradient(45deg,gold,#ffcc00);
+color:black;
+font-weight:600;
+font-size:15px; 
+cursor:pointer;
+transition:0.4s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 25px gold;
+}
+
+/* CARD */
+.card{
+width:530px;      /* 👈 chorai zyada */
+height:390px;     /* 👈 lambai choti */
+padding:30px 40px;
+border-radius:30px;
+background:rgba(0,0,0,0.55);
+backdrop-filter:blur(8px);
+text-align:center;
+display:none;
+box-shadow:0 0 40px rgba(255,215,0,0.6);
+transition:0.6s;
+transform-style:preserve-3d;
+animation:zoomIn 1.2s ease;
+position:relative;
+}
+
+/* Animated glowing border */
+.card::before{
+content:"";
+position:absolute;
+inset:-3px;
+border-radius:35px;
+background:linear-gradient(45deg,gold,transparent,gold);
+z-index:-1;
+animation:borderGlow 4s linear infinite;
+}
+
+@keyframes borderGlow{
+0%{filter:hue-rotate(0deg);}
+100%{filter:hue-rotate(360deg);}
+}
+
+/* 3D Hover Tilt */
+.card:hover{
+transform:rotateY(8deg) rotateX(8deg) scale(1.05);
+box-shadow:0 0 60px gold;
+}
+
+/* TEXT STYLING */
+.card h2{
+font-family:'Cinzel',serif;
+font-size:28px;
+color:gold;
+text-shadow:0 0 15px gold;
+margin-bottom:8px;
+}
+
+.from{
+font-family:'Playfair Display',serif;
+font-size:25px;
+color:#fff;
+margin-bottom:18px;
+text-shadow:0 0 10px white;
+}
+
+.wish{
+font-size:17px;
+line-height:1.8;
+color:#eee;
+}
+
+/* Floating sparkles */
+.sparkle{
+position:absolute;
+color:gold;
+animation:sparkle 4s infinite;
+}
+
+@keyframes sparkle{
+0%{opacity:0; transform:translateY(0);}
+50%{opacity:1;}
+100%{opacity:0; transform:translateY(-40px);}
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(-20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes zoomIn{
+from{opacity:0; transform:scale(0.6);}
+to{opacity:1; transform:scale(1);}
+}
+
+</style>
+</head>
+
+<body>
+
+<video id="bgVideo" muted loop>
+<source src="Video.mp4" type="video/mp4">
+</video>
+
+<div class="entry" id="entryBox">
+<h1>Welcome✨</h1>
+<p>Enter your name ..</p>
+<input type="text" id="username" placeholder="Your Name">
+<br>
+<button onclick="startWish()">Next</button>
+</div>
+
+<div class="card" id="wishCard">
+<h2 id="greeting"></h2>
+<br>
+<div class="wish">
+ May this beautiful month bring peace to your heart and  Fill your life with countless blessings✨<br>
+ May your every prayer be answered And every dream you hold come true🌟🤲<br>
+ Remember me and my family in your prayers💫<br>
+</div>
+<br>
+<div class="from">Blessed Ramadan ! From Aimen💖</div>
+</div>
+
+<script>
+
+function startWish(){
+
+let name = document.getElementById("username").value;
+
+if(name.trim()==""){
+alert("Please enter your name 💛");
+return;
+}
+
+document.getElementById("greeting").innerHTML =
+"🌙 Ramadan Mubarak " + name + " ✨";
+
+document.getElementById("entryBox").style.display="none";
+
+let video = document.getElementById("bgVideo");
+video.style.display="block";
+video.play();
+video.playbackRate = 1.7;
+
+document.getElementById("wishCard").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
