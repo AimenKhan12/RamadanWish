@@ -17,22 +17,13 @@ box-sizing:border-box;
 
 body{
 height:100vh;
-display:block;
+display:flex;
 justify-content:center;
 align-items:center;
 background:black;
 overflow:hidden;
 font-family:'Poppins',sans-serif;
 color:white;
-}
-.entry, .card{
-position:relative;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-width:90%;
-max-width:530px;
- margin:10px auto;
 }
 
 /* VIDEO */
@@ -57,7 +48,7 @@ animation:fadeIn 1.5s ease;
 
 .entry h1{
 font-family:'Cinzel',serif;
-font-size:6vw;
+font-size:38px;
 color:gold;
 text-shadow:0 0 20px gold;
 margin-bottom:15px;
@@ -65,7 +56,7 @@ margin-bottom:15px;
 
 .entry p{
 margin-bottom:25px;
-font-size:4vw;
+font-size:15px;
 color:#ddd;
 }
 
@@ -77,7 +68,7 @@ outline:none;
 width:80%;          /* mobile screen ke hisaab se adjust */
 max-width:260px;
 text-align:center;
-font-size:4vw;
+font-size:16px;
 transition:0.4s;
 }
 
@@ -93,7 +84,7 @@ border-radius:40px;
 background:linear-gradient(45deg,gold,#ffcc00);
 color:black;
 font-weight:600;
-font-size:4vw; 
+font-size:15px; 
 cursor:pointer;
 transition:0.4s;
 width:50%;          /* mobile me fit ho jaye */
@@ -148,7 +139,7 @@ box-shadow:0 0 60px gold;
 /* TEXT STYLING */
 .card h2{
 font-family:'Cinzel',serif;
-font-size:5vw;
+font-size:28px;
 color:gold;
 text-shadow:0 0 15px gold;
 margin-bottom:8px;
@@ -163,7 +154,7 @@ text-shadow:0 0 10px white;
 }
 
 .wish{
-font-size:3.5vw;
+font-size:17px;
 line-height:1.8;
 color:#eee;
 }
@@ -249,6 +240,3 @@ document.getElementById("wishCard").style.display="block";
 
 </body>
 </html>
-
-
-
